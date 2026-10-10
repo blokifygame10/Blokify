@@ -1,0 +1,148 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Blokify</title>
+<style>
+:root{--bg:#0b0f17;--cd:#161c28;--ln:#2a3345;--g:#2fa84f;--b:#2563eb;--t:#2ee6a6;--mu:#93a0b8}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:#fff}
+[hidden]{display:none!important}.v{min-height:100vh}button{font:inherit;color:inherit;cursor:pointer}
+.ic{width:20px;height:20px;vertical-align:middle}.logo{font-weight:900;letter-spacing:1px}
+#load{background:#fff;color:#111;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#load .logo{font-size:clamp(44px,12vw,90px)}#ld{position:fixed;bottom:12vh;color:#555}
+.au{max-width:420px;margin:0 auto;padding:40px 22px;text-align:center}.au .logo{font-size:52px}.au h3{color:var(--t);margin:6px 0 22px}
+.big{display:block;width:100%;padding:16px;border:0;border-radius:14px;font-weight:800;font-size:18px;margin:12px 0}.gr{background:var(--g)}.bl{background:var(--b)}
+input,select{width:100%;padding:14px;border-radius:12px;border:1px solid var(--ln);background:#0e1420;color:#fff;font:inherit;margin:6px 0}
+label{display:block;text-align:left;font-size:14px;color:var(--mu);margin-top:10px}.row{display:flex;gap:8px}.er{color:#ff7a7a;min-height:20px;font-size:14px}
+.gd button{flex:1;padding:12px;border-radius:12px;border:1px solid var(--ln);background:#0e1420}.gd .on{border-color:var(--t);color:var(--t)}
+.back{background:none;border:0;font-size:26px;float:left}
+header{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--ln)}header .logo{font-size:22px}
+#sb{flex:1;text-align:left;background:var(--cd);border:1px solid var(--ln);border-radius:12px;padding:10px 12px;color:var(--mu)}
+.ib{background:none;border:0}.me{display:flex;align-items:center;gap:8px;background:none;border:0;font-weight:700}.av{width:34px;height:34px;border-radius:50%;background:#f5c9a0;border:2px solid var(--t)}
+.lay{display:flex;min-height:calc(100vh - 57px)}nav{width:170px;padding:12px;border-right:1px solid var(--ln)}
+nav button{display:flex;gap:10px;align-items:center;width:100%;padding:12px;margin-bottom:4px;border:0;border-radius:10px;background:none;text-align:left}nav .on{background:var(--cd);color:var(--t)}
+main{flex:1;padding:18px;min-width:0}h2{margin:18px 0 10px}.rw{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px}
+.gc{flex:0 0 130px;cursor:pointer}.th{aspect-ratio:1;border-radius:22px;display:flex;align-items:flex-end;padding:8px;font-size:34px;font-weight:900;color:#ffffff66}.gc b{display:block;margin-top:6px;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips button{padding:9px 14px;border-radius:20px;border:1px solid var(--ln);background:var(--cd)}.chips .on{background:var(--t);color:#062}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,130px);gap:14px;margin-top:14px}
+.ml{display:flex;gap:16px;flex-wrap:wrap}.mt{width:150px}.mt button{display:block;width:100%;padding:11px;margin-bottom:4px;border:0;border-radius:10px;background:none;text-align:left}.mt .on{background:var(--cd);color:var(--t)}
+.mc{flex:1;min-width:240px}.it{display:grid;grid-template-columns:repeat(auto-fill,92px);gap:10px}.it button{border:2px solid var(--ln);border-radius:14px;background:var(--cd);padding:6px;font-size:12px}.it .on{border-color:var(--t)}.it i{display:block;height:52px;border-radius:8px;margin-bottom:4px}
+.pv{width:260px}#cv{width:100%;height:340px;background:var(--cd);border-radius:18px}
+.gh{border-radius:22px;padding:30px 16px;text-align:center}.gh .th{width:150px;margin:0 auto 10px}.play{width:220px}.pop{position:fixed;inset:0;background:#000b;z-index:9;padding:60px 18px}.pop input{max-width:520px;display:block;margin:0 auto 18px}
+@media(max-width:700px){.lay{flex-direction:column-reverse}nav{width:100%;display:flex;border:0;border-top:1px solid var(--ln);position:sticky;bottom:0;background:var(--bg);padding:6px}nav button{flex-direction:column;font-size:11px;gap:2px;justify-content:center;text-align:center}.me span{display:none}}
+.st{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--ln)}.st small{display:block;color:var(--mu)}
+.tg{width:52px;height:30px;border-radius:15px;border:0;background:#334155;position:relative;flex:none}.tg:after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}.tg.on{background:var(--g)}.tg.on:after{left:25px}
+.it img{display:block;width:100%;height:80px;object-fit:contain;background:#0e1420;border-radius:8px;margin-bottom:4px}.it{grid-template-columns:repeat(auto-fill,100px)!important}
+</style></head><body>
+<section id="load" class="v"><div class="logo">BLOKIFY</div><div id="ld">Loading.</div></section>
+
+<section id="welcome" class="v au" hidden><div class="logo">BLOKIFY</div><h3>PLAY. CREATE. EXPLORE.</h3>
+<button class="big gr" data-go="signup">SIGN UP</button><button class="big bl" data-go="login">LOG IN</button><button class="big" style="background:#fff;color:#222" id="gw">Continue with Google</button><div class="er" id="we"></div></section>
+
+<section id="login" class="v au" hidden><button class="back" data-go="welcome">&larr;</button><div class="logo">BLOKIFY</div><h3>Welcome back!<br><small style="color:#fff">Log in to continue</small></h3>
+<input id="lu" placeholder="Username" autocapitalize="none"><input id="lp" type="password" placeholder="Password"><div class="er" id="le"></div><button class="big bl" id="lg">LOG IN</button></section>
+
+<section id="signup" class="v au" hidden><button class="back" data-go="welcome">&larr;</button><div class="logo">BLOKIFY</div><h3>SIGN UP AND START HAVING FUN!</h3>
+<label>Birthday</label><div class="row"><select id="bm"></select><select id="bd"></select><select id="by"></select></div>
+<label>Username</label><input id="su" placeholder="Don't use your real name" autocapitalize="none">
+<label>Password</label><input id="sp" type="password" placeholder="At least 8 characters">
+<label>Gender (optional)</label><div class="row gd" id="gd"><button data-g="girl">Girl</button><button data-g="boy">Boy</button></div>
+<div class="er" id="se"></div><button class="big gr" id="sg">SIGN UP</button></section>
+
+<section id="app" class="v" hidden>
+<header><span class="logo">BLOKIFY</span><button id="sb" data-i="search"> Search</button><button class="me" id="pf"><div class="av"></div><span id="nm"></span></button><button class="ib" id="bl" data-i="bell"></button><button class="ib" id="gr2" data-i="gear"></button></header>
+<div class="lay"><nav id="nav"><button data-r="home" data-i="home">Home</button><button data-r="cats" data-i="grid">Categories</button><button data-r="mall" data-i="bag">Mall</button><button data-r="msg" data-i="chat">Messages</button><button data-r="create" data-i="edit">Create</button></nav><main id="mn"></main></div></section>
+<div class="pop" id="pp" hidden></div>
+
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import{getAuth,onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import{getFirestore,doc,setDoc,getDoc}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import*as THREE from"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
+/* PASTE YOUR FIREBASE CONFIG HERE (Firebase console > Project settings > Your apps > Web) */
+const cfg={apiKey:"AIzaSyARZQEdyzZZ-WqzYuDCQxFOg_QQyE7T_uM",authDomain:"blokify-49649.firebaseapp.com",projectId:"blokify-49649",storageBucket:"blokify-49649.firebasestorage.app",messagingSenderId:"983546804021",appId:"1:983546804021:web:3de1138b45f17af50fbe7c"};
+const app=initializeApp(cfg),auth=getAuth(app),db=getFirestore(app);
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const I={home:'<path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>',grid:'<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/>',bag:'<path d="M5 8h14l-1 13H6zM9 8a3 3 0 016 0"/>',chat:'<path d="M4 4h16v12H9l-5 4z"/>',edit:'<path d="M4 20h4L19 9l-4-4L4 16z"/>',search:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/>',bell:'<path d="M6 17v-6a6 6 0 0112 0v6l2 2H4zM10 21h4"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>'};
+$$('[data-i]').forEach(e=>e.insertAdjacentHTML('afterbegin',`<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">${I[e.dataset.i]}</svg>`));
+const show=id=>$$('.v').forEach(v=>v.hidden=v.id!==id);
+let n=1;setInterval(()=>$('#ld').textContent='Loading'+'.'.repeat(n=n%3+1),1000);
+$$('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+/* birthday + gender */
+const mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],op=(a,t)=>`<option value="">${t}</option>`+a.map(x=>`<option>${x}</option>`).join('');
+$('#bm').innerHTML=op(mo,'Month');$('#bd').innerHTML=op([...Array(31)].map((_,i)=>i+1),'Day');
+$('#by').innerHTML=op([...Array(25)].map((_,i)=>new Date().getFullYear()-i),'Year');
+let gen='';$$('#gd button').forEach(b=>b.onclick=()=>{gen=gen===b.dataset.g?'':b.dataset.g;$$('#gd button').forEach(x=>x.classList.toggle('on',x.dataset.g===gen))});
+/* data */
+const GAMES=[['Block Town','Life Simulator','#3b82f6','#06b6d4'],['Island Survival','Survival','#16a34a','#65a30d'],['Obby Rush','Obby','#f97316','#ef4444'],['Pet Park','Simulator','#ec4899','#f59e0b'],['Sky Racers','Racing','#6366f1','#0ea5e9'],['Build Land','Building','#a16207','#facc15'],['Fashion Fun','Fashion','#d946ef','#fb7185'],['Maze Quest','Puzzle','#0d9488','#22d3ee']];
+const CATS=['Life Simulator','Survival','Roleplay','Obby','Adventure','Racing','Building','Puzzle','Sports','Simulator','Fashion','Tycoon','Art & Creativity','Music','Fun & Party'];
+let A={skin:'#f5c9a0',shirt:'#2563eb',pants:'#334155',hat:'',head:'box'},user=null,prof=null;
+const card=g=>`<div class="gc" data-game="${g[0]}"><div class="th" style="background:linear-gradient(135deg,${g[2]},${g[3]})">${g[0][0]}</div><b>${g[0]}</b></div>`;
+const err=(id,m)=>$('#'+id).textContent=m;
+/* auth */
+const E={'auth/email-already-in-use':'That username is taken','auth/invalid-credential':'Wrong username or password','auth/wrong-password':'Wrong username or password','auth/user-not-found':'Wrong username or password','auth/network-request-failed':'No internet connection','auth/operation-not-allowed':'This sign-in method is not turned on in Firebase','auth/unauthorized-domain':'This website is not in Firebase authorized domains','auth/popup-closed-by-user':'Sign-in was cancelled'};
+const msg=e=>E[e.code]||('Error: '+(e.code||e.message));
+async function gl(id){try{const c=await signInWithPopup(auth,new GoogleAuthProvider());user=c.user;let p=(await getDoc(doc(db,'users',user.uid))).data();if(!p){p={username:'Player'+user.uid.slice(-4),birthday:'',gender:'',avatar:A};await setDoc(doc(db,'users',user.uid),p)}prof=p;enter()}catch(e){err(id,msg(e))}}
+$('#gw').onclick=()=>gl('we');
+const em=u=>u.toLowerCase()+'@blokify.app';
+$('#sg').onclick=async()=>{const u=$('#su').value.trim(),p=$('#sp').value,m=$('#bm').value,d=$('#bd').value,y=$('#by').value;
+if(!/^[A-Za-z0-9_]{3,16}$/.test(u))return err('se','Username: 3-16 letters, numbers or _');
+if(p.length<8)return err('se','Password needs at least 8 characters');if(!m||!d||!y)return err('se','Pick your birthday');
+try{const c=await createUserWithEmailAndPassword(auth,em(u),p);prof={username:u,birthday:`${y}-${mo.indexOf(m)+1}-${d}`,gender:gen,avatar:A};await setDoc(doc(db,'users',c.user.uid),prof);user=c.user;enter()}
+catch(e){err('se',msg(e))}};
+$('#lg').onclick=async()=>{try{const c=await signInWithEmailAndPassword(auth,em($('#lu').value.trim()),$('#lp').value);user=c.user;prof=(await getDoc(doc(db,'users',user.uid))).data();enter()}catch(e){err('le',msg(e))}};
+/* app shell */
+function enter(){setTimeout(chk,800);if(prof?.avatar)A={...A,...prof.avatar};$('#nm').textContent=prof?.username||'Player';$('.av').style.background=A.skin;show('app');go('home')}
+const mn=$('#mn');let cur='home',cat='';
+function go(r){cur=r;$$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.r===r));
+if(r==='home')mn.innerHTML=`<h2>Recommended For You</h2><div class="rw">${GAMES.map(card).join('')}</div><h2>Popular</h2><div class="rw">${[...GAMES].reverse().map(card).join('')}</div>`;
+else if(r==='cats')mn.innerHTML=`<h2>Categories</h2><div class="chips">${CATS.map(c=>`<button data-c="${c}" class="${c===cat?'on':''}">${c}</button>`).join('')}</div><div class="gg">${GAMES.filter(g=>!cat||g[1]===cat).map(card).join('')||'<p style="color:var(--mu)">No games here yet.</p>'}</div>`;
+else if(r==='mall')mall();else if(r==='set')sett();
+else mn.innerHTML=`<h2>${{msg:'Messages',create:'Create',set:'Settings',prof:'Profile'}[r]}</h2><p style="color:var(--mu)">Coming soon.</p>`}
+$('#nav').onclick=e=>{const b=e.target.closest('button');b&&go(b.dataset.r)};
+$('#pf').onclick=()=>go('prof');$('#gr2').onclick=()=>go('set');
+$('#bl').onclick=()=>pop('<h2 style="text-align:center">Notifications</h2><p style="text-align:center;color:#ccc">No notifications yet.</p>');
+$('#sb').onclick=()=>{pop('<input id="q" placeholder="Search games" autofocus><div class="gg" id="qr" style="justify-content:center"></div>');$('#q').oninput=e=>{const v=e.target.value.toLowerCase();$('#qr').innerHTML=v?GAMES.filter(g=>g[0].toLowerCase().includes(v)).map(card).join(''):''}};
+function pop(h){const p=$('#pp');p.innerHTML=h;p.hidden=false}
+$('#pp').onclick=e=>{if(e.target.id==='pp'&&!e.target.dataset.hard)e.target.hidden=true};
+document.addEventListener('click',e=>{const c=e.target.closest('[data-c]');if(c){cat=cat===c.dataset.c?'':c.dataset.c;go('cats')}
+const g=e.target.closest('[data-game]');if(g){$('#pp').hidden=true;const x=GAMES.find(y=>y[0]===g.dataset.game);
+mn.innerHTML=`<div class="gh" style="background:linear-gradient(135deg,${x[2]}66,${x[3]}66)"><div class="th" style="background:linear-gradient(135deg,${x[2]},${x[3]})">${x[0][0]}</div><h2>${x[0]}</h2><button class="big gr play">PLAY</button><div class="chips" style="justify-content:center"><button>Favorite</button><button>Notify me</button></div></div><div class="chips" style="margin-top:14px"><button>Servers</button><button>Versions</button><button>Events</button></div>`}});
+/* mall */
+const sw=(k,a)=>a.map(c=>({k,v:c}));
+const TABS={Characters:sw('skin',['#f5c9a0','#c68642','#8d5524','#ffd966','#7ec8e3','#a3e635','#f9a8d4']),
+Clothing:[...sw('shirt',['#2563eb','#ef4444','#22c55e','#facc15','#a855f7','#111827','#ffffff']),...sw('pants',['#334155','#1e3a8a','#78350f','#111827','#166534'])],
+Accessories:[{k:'hat',v:''},...sw('hat',['#ef4444','#2563eb','#facc15','#111827','#22c55e'])],
+Body:[{k:'head',v:'box',l:'Square head'},{k:'head',v:'round',l:'Round head'}],
+Bundles:[{k:'set',v:{skin:'#f5c9a0',shirt:'#111827',pants:'#334155',hat:'#111827',head:'box'},l:'City Life'},{k:'set',v:{skin:'#f9a8d4',shirt:'#fda4af',pants:'#fbcfe8',hat:'#fda4af',head:'round'},l:'City Life Pink'}]};
+let tab='Characters',D={...A};
+function mall(){mn.innerHTML=`<h2>Mall</h2><div class="ml"><div class="mt">${Object.keys(TABS).map(t=>`<button data-t="${t}" class="${t===tab?'on':''}">${t}</button>`).join('')}</div><div class="mc"><div class="it">${TABS[tab].map((o,i)=>`<button data-o="${i}"><img src="${thumb(o)}" alt="">${o.l||(o.k==='hat'&&!o.v?'No hat':NM[o.k]+' '+(i+1))}</button>`).join('')}</div></div><div class="pv"><canvas id="cv"></canvas><button class="big gr" id="sv">Save</button><div class="er" id="sm"></div></div></div>`;
+$$('.mt button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;mall()});
+$$('[data-o]').forEach(b=>b.onclick=()=>{const o=TABS[tab][b.dataset.o];o.k==='set'?D={...o.v}:D[o.k]=o.v;build()});
+$('#sv').onclick=async()=>{A={...D};$('.av').style.background=A.skin;try{await setDoc(doc(db,'users',user.uid),{avatar:A},{merge:true});$('#sm').style.color='#2ee6a6';err('sm','Saved!')}catch(e){err('sm','Could not save. Check your Firebase setup.')}};
+D={...A};setup()}
+let R,S,C,G;
+function setup(){R=new THREE.WebGLRenderer({canvas:$('#cv'),antialias:true,alpha:true});const w=$('#cv').clientWidth;R.setSize(w,340,false);S=new THREE.Scene();C=new THREE.PerspectiveCamera(40,w/340,.1,50);C.position.set(0,1.2,9);
+S.add(new THREE.AmbientLight(0xffffff,1.3));const L=new THREE.DirectionalLight(0xffffff,1.6);L.position.set(3,5,4);S.add(L);G=null;build();
+(function tick(){if(cur!=='mall')return;if(G)G.rotation.y+=.015;R.render(S,C);requestAnimationFrame(tick)})()}
+const A0={skin:'#f5c9a0',shirt:'#2563eb',pants:'#334155',hat:'',head:'box'},NM={skin:'Character',shirt:'Shirt',pants:'Pants',hat:'Hat',head:'Head'},TC={};let TR,TS,TCam;
+function mk(a){const g=new THREE.Group(),B=(w,h,d)=>new THREE.BoxGeometry(w,h,d),m=(q,c,x,y)=>{const o=new THREE.Mesh(q,new THREE.MeshLambertMaterial({color:c}));o.position.set(x,y,0);g.add(o)};
+m(a.head==='round'?new THREE.SphereGeometry(.7,20,14):B(1.3,1.3,1.3),a.skin,0,2.6);m(B(1.7,1.7,.9),a.shirt,0,1.1);m(B(.5,1.6,.5),a.skin,-1.1,1.1);m(B(.5,1.6,.5),a.skin,1.1,1.1);m(B(.8,1.7,.8),a.pants,-.42,-.55);m(B(.8,1.7,.8),a.pants,.42,-.55);if(a.hat)m(B(1.5,.4,1.5),a.hat,0,3.4);return g}
+function build(){if(G)S.remove(G);G=mk(D);G.position.y=-.4;S.add(G)}
+function thumb(o){const a={...A0,...(o.k==='set'?o.v:{[o.k]:o.v})},key=o.k+JSON.stringify(a);if(TC[key])return TC[key];
+if(!TR){TR=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});TR.setSize(200,200);TS=new THREE.Scene();TCam=new THREE.PerspectiveCamera(35,1,.1,50);TS.add(new THREE.AmbientLight(0xffffff,1.3));const L=new THREE.DirectionalLight(0xffffff,1.6);L.position.set(3,5,4);TS.add(L)}
+const g=mk(a);g.rotation.y=-.6;TS.add(g);const v={head:[2.6,6],hat:[3,6],shirt:[1.1,7.5],pants:[-.5,7.5]}[o.k]||[1,10];TCam.position.set(0,v[0],v[1]);TCam.lookAt(0,v[0],0);TR.render(TS,TCam);TS.remove(g);return TC[key]=TR.domElement.toDataURL()}
+/* settings */
+const sha=async t=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))].map(x=>x.toString(16).padStart(2,'0')).join('');
+const SET=[['Security & Privacy',[['avoid','Avoid Strangers','Extra protection from unfamiliar users.'],['filter','Chat Filters','Bad words in chats become ####.'],['priv','Privacy Mode','Hides your birthday, progress and games played.'],['ai','AI Safety','Extra safety from the Blokify AI Helper.']]],['Parental Controls',[['limit','Screen Time','Daily time limit.'],['lock','Lock App','Needs a PIN to change these settings.'],['nochat','Block Chat','Hides chat boxes in games.']]]];
+const sv2=async()=>{try{await setDoc(doc(db,'users',user.uid),{settings:prof.settings,username:prof.username},{merge:true})}catch(e){}};
+async function pin(){const s=prof.settings;if(!s.lock)return true;const p=prompt('Enter the PIN');return p!==null&&await sha(p)===s.pin}
+function chk(){const s=prof&&prof.settings;if(s&&s.limit&&s.mins&&s.used>=s.mins&&s.day===new Date().toDateString()){const p=$('#pp');p.dataset.hard=1;p.innerHTML='<h2 style="text-align:center">Time is up for today</h2><p style="text-align:center">Come back tomorrow!</p>';p.hidden=false}}
+setInterval(()=>{if(!prof||!user||document.hidden)return;const s=prof.settings=prof.settings||{avoid:1,filter:1,ai:1},d=new Date().toDateString();if(s.day!==d){s.day=d;s.used=0}s.used=(s.used||0)+1;sv2();chk()},60000);
+async function sett(){const s=prof.settings=prof.settings||{avoid:1,filter:1,ai:1},b=(prof.birthday||'').split('-').map(Number),age=b[0]?Math.floor((Date.now()-new Date(b[0],b[1]-1,b[2]))/31557600000):'-';
+mn.innerHTML=`<h2>Settings</h2><h3>Account Info</h3><label>Username</label><div class="row"><input id="un" value="${prof.username||''}"><button class="big gr" id="unb" style="width:110px;margin:6px 0">Save</button></div><div class="er" id="une"></div><p style="color:var(--mu)">Birthday: ${prof.birthday||'-'} &middot; Age: ${age} &middot; Gender: ${prof.gender||'-'}<br>Most played games: none yet</p>${SET.map(g=>`<h3>${g[0]}</h3>${g[1].map(x=>`<div class="st"><div><b>${x[1]}</b><small>${x[2]}</small></div><button class="tg${s[x[0]]?' on':''}" data-k="${x[0]}"></button></div>`).join('')}`).join('')}${s.limit?`<label>Daily limit (minutes)</label><input id="mn2" type="number" min="5" value="${s.mins||60}">`:''}<h3>Spending Time</h3><p style="color:var(--mu)">Today: ${s.used||0} minutes</p>`;
+$('#unb').onclick=async()=>{const v=$('#un').value.trim();if(!/^[A-Za-z0-9_]{3,16}$/.test(v))return err('une','Username: 3-16 letters, numbers or _');prof.username=v;$('#nm').textContent=v;await sv2();err('une','Saved!')};
+if($('#mn2'))$('#mn2').onchange=async e=>{if(!await pin())return sett();s.mins=Math.max(5,+e.target.value||60);await sv2()};
+$$('.tg').forEach(t=>t.onclick=async()=>{const k=t.dataset.k;if(!await pin())return;
+if(k==='lock'&&!s.lock){const p=prompt('Choose a 4-digit PIN');if(!/^\d{4}$/.test(p||''))return alert('The PIN must be 4 numbers');s.pin=await sha(p);s.lock=1}else s[k]=s[k]?0:1;await sv2();sett()})}
+/* start: wait for auth + 6 seconds */
+const ready=new Promise(r=>onAuthStateChanged(auth,async u=>{user=u;if(u)try{prof=(await getDoc(doc(db,'users',u.uid))).data()}catch(e){}r()},()=>r()));
+await Promise.all([ready,new Promise(r=>setTimeout(r,6000))]);
+user?enter():show('welcome');
+</script></body></html>
